@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Create a New Password</h3>
+    <input
+      type="password"
+      placeholder="Create Password"
+      id="p1"
+    />
+    <input
+      type="password"
+      placeholder="Re-enter Password"
+      id="p2"
+    />
+    <button class="btn" onclick="createPassword()">Submit</button>
+    <div class="error" id="password-error"></div>
+  </div>
+  <script>
+    
+      // Function to create a password
+      function createPassword() {
+        let p1 = document.getElementById("p1").value;
+        let p2 = document.getElementById("p2").value;
+        let passwordError = document.getElementById("password-error");
+
+        // Clear any previous error messages
+        passwordError.textContent = "";
+
+        // Validate if passwords match
+        if (p1 === "" || p2 === "") {
+          passwordError.textContent = "Both password fields are required.";
+          return;
+        }
+
+        if (p1 !== p2) {
+          passwordError.textContent = "Passwords do not match.";
+          return;
+        }
+        if (p1 == p2) {
+          passwordError.textContent = "The Password Created Successfully.";
+          return;
+        }
+
+
+      }
+  </script>
+</body>
+</html>
